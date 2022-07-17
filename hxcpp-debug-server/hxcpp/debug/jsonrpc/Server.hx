@@ -105,9 +105,9 @@ class Server {
 			startQueue.pop(true);
 			Debugger.enableCurrentThreadDebugging(true);
 			startQueue.pop(true);
-		} else {
+		} #if !lime else {
 			waitForAttach();
-		}
+		} #end
 	}
 
 	private function connect():Bool {
