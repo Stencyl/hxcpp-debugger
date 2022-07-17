@@ -5,7 +5,7 @@ import haxe.macro.Compiler;
 
 class Macro {
 	macro public static function injectServer():Void {
-		if (Context.defined("cpp") && Context.defined("debug")) {
+		if (Context.defined("cpp") && (Context.defined("debug") || Context.defined("HXCPP_DEBUGGER"))) {
 			Context.getType("hxcpp.debug.jsonrpc.Server");
 			Compiler.define("HXCPP_DEBUGGER");
 		}
